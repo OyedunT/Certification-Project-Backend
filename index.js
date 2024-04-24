@@ -1,7 +1,8 @@
 const express = require("express");
 const connectDb = require("./Config/dbConfig");
 const env = require("dotenv").config()
-const userRoutes = require("./Routes/UserRoutes")
+const userRoutes = require("./Routes/UserRoutes");
+const cors = require("cors");
 const ErrorHandler = require("./Middlewares/ErrorHandlers")
 const app = express()
 
@@ -10,7 +11,7 @@ const app = express()
 
 
 app.use(express.json());
-
+app.use(cors({origin: "*"}));
 app.use("/Api/User", userRoutes)
 
 app.use(ErrorHandler)

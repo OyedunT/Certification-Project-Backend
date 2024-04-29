@@ -10,8 +10,8 @@ const app = express()
 
 
 
-app.use(express.json());
 app.use(cors({origin: "*"}));
+app.use(express.json());
 app.use("/Api/User", userRoutes)
 
 app.use(ErrorHandler)

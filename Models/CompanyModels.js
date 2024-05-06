@@ -7,6 +7,10 @@ const CompanySchema = new mongoose.Schema({
         type: String, require: [true, "CompanyName is Required"]
 
     },
+     CompanyWebsite: {
+        type: String, require: [false, "CompanyWebsite is Optional"]
+
+    },
     Email: {
         type: String,
         require: [true, "Email is Required"],
@@ -26,6 +30,7 @@ const CompanySchema = new mongoose.Schema({
         minlength: [10, "Password must not be less than 6 characters"],
 
     },
+    
   
 },{timestamps: true});
 

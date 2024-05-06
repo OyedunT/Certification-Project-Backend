@@ -143,9 +143,9 @@ const Login = async (req, res) => {
   // FUNCTION FOR COMPANY SIGNUP
   
   const companysignUp = async (req, res, next) => {
-    const { CompanyName, Email, Location, Password  } = req.body;
+    const { CompanyName, CompanyWebsite, Email, Location, Password  } = req.body;
 
-    if (!CompanyName || !Email || !Location || !Password) {
+    if (!CompanyName || !CompanyWebsite|| !Email || !Location || !Password) {
         res.status(400);
         return next(new Error("All fields are mandatory"));
     }
